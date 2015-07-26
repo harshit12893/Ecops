@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+    <definition name="/welcome" template="/layout.jsp" >
+        <put-attribute name="header" value="/header.jsp"/>
+        <put-attribute name="user" value="/loginuser.jsp"/>
+        <put-attribute name="menu" value="/menu.jsp"/>
+        <put-attribute name="body" value="/homepage_news.jsp"/>
+        <put-attribute name="police_login" value="/police_login.jsp"/>
+        <put-attribute name="footer" value="/footer.jsp"/>
+    </definition>
+    <definition name="/red" template="/layouttemp.jsp" >
+        <put-attribute name="header" value="/header.jsp"/>
+        <put-attribute name="user" value="/loginuser.jsp"/>
+        <put-attribute name="menu" value="/menu.jsp"/>
+        <put-attribute name="body" value="/homepage_news.jsp"/>
+        <put-attribute name="police_login" value="/police_login.jsp"/>
+        <put-attribute name="footer" value="/footer.jsp"/>
+    </definition>
+    <definition name="/welcome2" template="/layout2.jsp" >
+        <put-attribute name="header" value="/header.jsp"/>
+        <put-attribute name="welcome_user" value="/welcome_user.jsp"/>
+        <put-attribute name="logout_user" value="/logout_user.jsp"/>
+        <put-attribute name="menu" value="/menu.jsp"/>
+        <put-attribute name="body" value="/homepage_news.jsp"/>
+        <put-attribute name="footer" value="/footer.jsp"/>
+    </definition>
+    
+    <definition name="/adminloggedin" extends="/welcome2">
+        <put-attribute name="body" value="/adminloggedin.jsp"/>
+    </definition>
+    
+    <definition name="/userloggedin" extends="/welcome2">
+        <put-attribute name="body" value="/userloggedin.jsp"/>
+    </definition>
+    
+    <definition name="/userSignup" extends="/red">
+        <put-attribute name="body" value="/user_signup.jsp"/>
+    </definition>
+    
+    <definition name="/user_registered" extends="/red">
+        <put-attribute name="body" value="/user_registered.jsp"/>
+    </definition>
+    
+    
+    
+    
+    <definition name="/policeRegister" extends="/welcome2">
+        <put-attribute name="body" value="/police_register.jsp"/>
+    </definition>
+    
+    
+    <definition name="/policeRegisterSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/police_register_success.jsp"/>
+    </definition>
+    
+    
+    <definition name="/policeDelUpd" extends="/welcome2">
+        <put-attribute name="body" value="/police_delete_update.jsp"/>
+    </definition>
+    
+    <definition name="/policeDelUpd2" extends="/welcome2">
+        <put-attribute name="body" value="/police_delete_update_1.jsp"/>
+    </definition>
+    
+     <definition name="/policeDeleteSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/police_delete_success.jsp"/>
+    </definition>
+    
+    <definition name="/policeUpdate" extends="/welcome2">
+        <put-attribute name="body" value="/police_update_data.jsp"/>
+    </definition>
+    
+    <definition name="/policeUpdateSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/police_update_success.jsp"/>
+    </definition>
+    
+    <definition name="/addNews" extends="/welcome2">
+        <put-attribute name="body" value="/addNews.jsp"/>
+    </definition>
+    
+    
+    <definition name="/newsAdded" extends="/welcome2">
+        <put-attribute name="body" value="/addNewsSuccess.jsp"/>
+    </definition>
+    
+    <definition name="/deleteUpdateNews" extends="/welcome2">
+        <put-attribute name="body" value="/news_delete_update.jsp"/>
+    </definition>
+    
+    <definition name="/deleteUpdateNews2" extends="/welcome2">
+        <put-attribute name="body" value="/news_delete_update_1.jsp"/>
+    </definition>
+    
+    <definition name="/updateNews" extends="/welcome2">
+        <put-attribute name="body" value="/news_update.jsp"/>
+    </definition>
+    
+    <definition name="/updateNewsSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/news_updated.jsp"/>
+    </definition>
+    
+    
+    <definition name="/addComplaint" extends="/welcome2">
+        <put-attribute name="body" value="/File.jsp"/>
+    </definition>
+    
+    
+    <definition name="/addComplainSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/add_complain_success.jsp"/>
+    </definition>
+    
+    
+    <definition name="/seeComplaints" extends="/welcome2">
+        <put-attribute name="body" value="/See.jsp"/>
+    </definition>
+    
+    
+    
+    
+    <definition name="/policeLoggedIn" extends="/welcome2">
+        <put-attribute name="body" value="/policeLoggedIn.jsp"/>
+    </definition>
+    
+    <definition name="/addCriminal" extends="/welcome2">
+        <put-attribute name="body" value="/add_criminal.jsp"/>
+    </definition>
+       
+    <definition name="/addCriminalSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/add_criminal_success.jsp"/>
+    </definition>
+    
+    
+    <definition name="/DeleteCriminal" extends="/welcome2">
+        <put-attribute name="body" value="/delete_criminal.jsp"/>
+    </definition>
+    
+    
+    <definition name="/DeleteCriminalSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/delete_criminal_success.jsp"/>
+    </definition>
+    
+     <definition name="/updateCriminal" extends="/welcome2">
+        <put-attribute name="body" value="/update_criminal.jsp"/>
+    </definition>
+    
+    <definition name="/updateCriminalSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/update_criminal_success.jsp"/>
+    </definition>
+    
+    <definition name="/viewStatus" extends="/welcome2">
+        <put-attribute name="body" value="/complaint_status_update.jsp"/>
+    </definition>
+    
+     <definition name="/updateStatus" extends="/welcome2">
+        <put-attribute name="body" value="/complaint_status_update_edit.jsp"/>
+    </definition>
+    
+     <definition name="/updateStatusSuccess" extends="/welcome2">
+        <put-attribute name="body" value="/complaint_status_update_success.jsp"/>
+    </definition>
+    
+    <definition name="/emergerncyContact" extends="/welcome">
+        <put-attribute name="body" value="/emergency_numbers.jsp"/>
+    </definition>
+    
+    <definition name="/aboutUs" extends="/welcome2">
+        <put-attribute name="body" value="/about_us.jsp"/>
+    </definition>
+    
+    <definition name="/services" extends="/welcome">
+        <put-attribute name="body" value="/services.jsp"/>
+    </definition>
+    
+    <definition name="/contact" extends="/welcome">
+        <put-attribute name="body" value="/contact.jsp"/>
+    </definition>
+</tiles-definitions>

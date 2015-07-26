@@ -1,0 +1,234 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"></result-type>
+        </result-types>
+        
+        <!-- redirect to home page -->
+        <action name="redirect" class="com.ecop.Act">
+            <result type="tiles" name="success">/welcome</result>
+            <result name="error">/index.jsp</result>
+        </action>
+        
+        
+        <!-- redirect to home page -->
+        <action name="redirect" class="com.ecop.NewsDeleteUpdate" method="getallnewsdata">
+            <result type="tiles" name="success">/welcome</result>
+            <result name="error">/red</result>
+        </action>
+        
+        
+        <!-- Loggedin pages -->
+        <action name="login" class="com.ecop.LoginUserAction">
+            <result type="tiles"  name="success">/adminloggedin</result>
+            <result type="tiles" name="userlogin">/userloggedin</result>
+  
+        </action>
+        
+        <!-- User Registration form -->
+        <action name="registeruser" class="com.ecop.Act" >
+            <result type="tiles" name="success">/userSignup</result>
+        </action>
+        
+        <!-- User Successfully Registered -->
+        <action name="usersignup" class="com.ecop.UserSignUp">
+            <result type="tiles" name="success">/user_registered</result>
+        </action>
+        <action name="GoBackUser" class="com.ecop.Act">
+            <result type="tiles" name="success">/welcome</result>
+         </action>
+        
+        <!-- User/Admin/Police Logout -->
+        <action name="logout" class="com.ecop.LogoutUsers">
+            <result type="tiles" name="success">/welcome</result>
+            <result type="tiles" name="error">/welcome</result>
+        </action>
+        
+        <action name="wel">
+            <result name="success" type="tiles">/red</result>
+        </action>
+        
+        
+        <action name="wel" class="com.ecop.NewsDeleteUpdate" method="getallnewsdata">
+            <result name="success" type="tiles">/red</result>
+        </action> 
+        
+        
+        
+        
+        
+        <action name="RegisterPoliceStation" class="com.ecop.PoliceStationAdd" method="goback" >
+            <result type="tiles" name="success">/policeRegister</result>
+        </action>
+        
+        
+        <action name="registerPolice" class="com.ecop.PoliceStationAdd">
+            <result type="tiles" name="success">/policeRegisterSuccess</result>
+        </action>
+        
+
+        <action name="GoHome" class="com.ecop.LoginPoliceStation" method="goback">
+            <result type="tiles" name="success">/adminloggedin</result>
+        </action>
+        
+        <action name="DeletePoliceStation" class="com.ecop.LoginPoliceStation" method="getallpsdata">
+            <result type="tiles" name="success">/policeDelUpd</result>
+        </action>
+        
+        <action name="PoliceDeleteSelectedData" class="com.ecop.PoliceStationDelete">
+            <result type="tiles"  name="success">/policeDeleteSuccess</result>
+        </action>
+        
+        
+        <action name="UpdatePoliceStationData" class="com.ecop.LoginPoliceStation" method="getallpsdata">
+            <result type="tiles" name="success">/policeDelUpd2</result>
+        </action>
+        
+        <action name="PoliceUpdateSelectedData" class="com.ecop.Act">
+            <result type="tiles"  name="success">/policeUpdate</result>
+        </action>
+        
+        <action name="PoliceStationDataUpdate" class="com.ecop.PoliceStationUpdate">
+            <result  type="tiles" name="success">/policeUpdateSuccess</result>
+        </action>
+        <action name="AddNews" class="com.ecop.LoginUserAction" method="newsadded">
+            <result type="tiles" name="success">/addNews</result>
+        </action>
+        
+        
+        <action name="addnews" class="com.ecop.LoginUserAction" method="addnews">
+            <result type="tiles" name="success">/newsAdded</result>
+        </action>
+      
+      
+        <action name="DeleteNews" class="com.ecop.NewsDeleteUpdate" method="getallnewsdata">
+            <result type="tiles"  name="success">/deleteUpdateNews</result>
+        </action>
+        
+        
+        <action name="UpdateNews" class="com.ecop.NewsDeleteUpdate" method="getallnewsdata">
+            <result type="tiles"  name="success">/deleteUpdateNews2</result>
+        </action>
+
+        <action name="DeleteSelectedNews" class="com.ecop.NewsDeleteUpdate" method="deleteNews">
+            <result type="tiles" name="success">/deleteUpdateNews</result>
+        </action>
+        
+        
+        <action name="UpdateSelectedNews" class="com.ecop.NewsDeleteUpdate"  >
+            <result type="tiles" name="success">/updateNews</result>
+        </action> 
+        
+        <action name="UpdateNewsData" class="com.ecop.NewsUpdate" method="newsupdate">
+            <result type="tiles" name="success">/updateNewsSuccess</result>
+        </action>
+        
+
+        
+        
+        <!-- User Module Starts -->
+        <action name="GoHomeUser" class="com.ecop.Act">
+            <result type="tiles" name="success">/userloggedin</result>
+        </action>
+        <action name="AddComplain" class="com.ecop.ComplaintAdd" method="execute">
+            <result type="tiles" name="success">/addComplaint</result>
+        </action>
+        
+        
+        <action name="View" class="com.ecop.ComplaintAdd" method="addcomplain">
+            <result type="tiles"  name="success">/addComplainSuccess</result>
+        </action>
+        
+        
+        <action name="SeeComplaint" class="com.ecop.LoginUserAction" method="viewcomplaint">
+            <result type="tiles" name="success">/seeComplaints</result>
+        </action>
+        
+        
+        <!-- Police Station/Criminal Module begins here -->
+        <!-- Police Station Login -->
+        <action name="login_police" class="com.ecop.LoginPoliceStation">
+            <result type="tiles" name="success">/policeLoggedIn</result>
+            <result  type="tiles" name="error">/red</result>
+            <result type="tiles" name="input">/red</result>
+        </action>
+        
+        <action name="AddCriminal" class="com.ecop.Act">
+            <result type="tiles" name="success">/addCriminal</result>
+        </action>
+        
+        <action name="GoHomePolice" class="com.ecop.Act">
+            <result type="tiles" name="success">/policeLoggedIn</result>
+        </action>
+        
+        <action name="AddCriminalData" class="com.ecop.CriminalAdd">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedType">image/jpg,image/jpeg</param>
+                <param name="maximumSize">4194304</param>
+            </interceptor-ref>
+            <result type="tiles" name="success">/addCriminalSuccess</result>
+        </action>
+        
+        <action name="showPhoto" class="com.ecop.CriminalDelete" method="getphoto">
+            <interceptor-ref name="defaultStack" />
+            <result type="tiles" name="success">/DeleteCriminal</result>
+        </action>
+        
+        <action name="DeleteCriminal" class="com.ecop.CriminalDelete" method="getcriminaldata">
+            <interceptor-ref name="defaultStack" />
+            <result type="tiles" name="success">/DeleteCriminal</result>
+        </action>
+        
+        <action name="DeleteSelectedCriminal" class="com.ecop.CriminalDelete" method="deleteCriminal">
+            <interceptor-ref name="defaultStack" />
+            <result type="tiles" name="success">/DeleteCriminalSuccess</result>
+        </action>
+        
+        <action name="UpdateCriminal" class="com.ecop.Act">
+            <result type="tiles" name="success">/updateCriminal</result>
+        </action>
+        
+        <action name="UpdateSelectedCriminal" class="com.ecop.CriminalUpdate">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedType">image/jpg,image/jpeg</param>
+                <param name="maximumSize">4194304</param>
+            </interceptor-ref>
+            <result type="tiles" name="success">/updateCriminalSuccess</result>
+        </action>
+        
+        <action name="ComplaintStatusUpdate" class="com.ecop.LoginPoliceStation" method="viewcomplaint">
+            <result type="tiles" name="success">/viewStatus</result>
+        </action>
+        
+        <action name="UpdateComplaintStatus" class="com.ecop.ComplaintsStatusUpdate">
+            <result type="tiles" name="success">/updateStatus</result>
+        </action>
+        
+        <action name="StatusUpdate" class="com.ecop.ComplaintsStatusUpdate" method="update">
+            <result type="tiles"  name="success">/updateStatusSuccess</result>
+        </action>
+        
+        <action name="emergencyContacts" >
+            <result type="tiles" name="success">/emergerncyContact</result>
+        </action>
+        
+        <action name="aboutus" >
+            <result type="tiles" name="success">/aboutUs</result>
+        </action>
+        
+        <action name="services" >
+            <result type="tiles" name="success">/services</result>
+        </action>
+        
+        <action name="contact" >
+            <result type="tiles" name="success">/contact</result>
+        </action>
+    </package>
+</struts>
